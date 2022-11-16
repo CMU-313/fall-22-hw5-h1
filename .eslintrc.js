@@ -12,9 +12,6 @@ module.exports = {
     'ecmaVersion': 'latest',
     'sourceType': 'module',
   },
-  'plugins': [
-    'react',
-  ],
   'rules': {
     'no-redeclare': ['warn', { "builtinGlobals": true }],
     'no-undef': 'warn',
