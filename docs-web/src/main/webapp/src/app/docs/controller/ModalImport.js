@@ -3,14 +3,14 @@
 /**
  * Modal import controller.
  */
-angular.module('docs').controller('ModalImport', function ($scope, $uibModalInstance, file, $q, $timeout) {
+angular.module('docs').controller('ModalImport', function($scope, $uibModalInstance, file, $q, $timeout) {
   // Payload
-  var formData = new FormData();
+  const formData = new FormData();
   formData.append('file', file, file.name);
 
   // Send the file
-  var deferred = $q.defer();
-  var getProgressListener = function(deferred) {
+  const deferred = $q.defer();
+  const getProgressListener = function(deferred) {
     return function(event) {
       deferred.notify(event);
     };
@@ -30,11 +30,11 @@ angular.module('docs').controller('ModalImport', function ($scope, $uibModalInst
       deferred.reject(jqXHR);
     },
     xhr: function() {
-      var myXhr = $.ajaxSettings.xhr();
+      const myXhr = $.ajaxSettings.xhr();
       myXhr.upload.addEventListener(
-        'progress', getProgressListener(deferred), false);
+          'progress', getProgressListener(deferred), false);
       return myXhr;
-    }
+    },
   });
 
   deferred.promise.then(function(data) {
@@ -44,7 +44,7 @@ angular.module('docs').controller('ModalImport', function ($scope, $uibModalInst
     if (!$scope.errorQuota) {
       $scope.errorGeneral = true;
     }
-    $timeout(function () {
+    $timeout(function() {
       $uibModalInstance.close(null);
     }, 3000);
   }, function(e) {

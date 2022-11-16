@@ -4,7 +4,7 @@
  * Tag controller.
  */
 angular.module('docs').controller('Tag', function($scope, Restangular) {
-  $scope.tag = { name: '', color: '#3a87ad' };
+  $scope.tag = {name: '', color: '#3a87ad'};
 
   // Retrieve tags
   $scope.tags = [];
@@ -20,8 +20,8 @@ angular.module('docs').controller('Tag', function($scope, Restangular) {
    */
   $scope.addTag = function() {
     Restangular.one('tag').put($scope.tag).then(function(data) {
-      $scope.tags.push({ id: data.id, name: $scope.tag.name, color: $scope.tag.color });
-      $scope.tag = { name: '', color: '#3a87ad' };
+      $scope.tags.push({id: data.id, name: $scope.tag.name, color: $scope.tag.color});
+      $scope.tag = {name: '', color: '#3a87ad'};
     });
   };
 

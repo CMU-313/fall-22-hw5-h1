@@ -9,7 +9,7 @@ angular.module('docs').directive('auditLog', function() {
     templateUrl: 'partial/docs/directive.auditlog.html',
     replace: true,
     scope: {
-      logs: '='
-    }
-  }
+      logs: '=',
+    },
+  };
 });

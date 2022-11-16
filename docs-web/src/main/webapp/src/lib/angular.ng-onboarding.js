@@ -1,9 +1,9 @@
 (function() {
-  var app;
+  let app;
 
-  app = angular.module("ngOnboarding", []);
+  app = angular.module('ngOnboarding', []);
 
-  app.provider("ngOnboardingDefaults", function() {
+  app.provider('ngOnboardingDefaults', function() {
     return {
       options: {
         overlay: true,
@@ -14,7 +14,7 @@
         contentClass: 'onboarding-popover-content',
         arrowClass: 'onboarding-arrow',
         buttonContainerClass: 'onboarding-button-container',
-        buttonClass: "btn",
+        buttonClass: 'btn',
         showButtons: true,
         nextButtonText: '<span class="fa fa-arrow-right"></span>',
         previousButtonText: '<span class="fa fa-arrow-left"></span>',
@@ -23,13 +23,13 @@
         closeButtonClass: 'onboarding-close-button',
         closeButtonText: '<span class="fa fa-times"></span>',
         stepClass: 'onboarding-step-info',
-        showStepInfo: true
+        showStepInfo: true,
       },
       $get: function() {
         return this.options;
       },
       set: function(keyOrHash, value) {
-        var k, v, _results;
+        let k; let v; let _results;
         if (typeof keyOrHash === 'object') {
           _results = [];
           for (k in keyOrHash) {
@@ -40,7 +40,7 @@
         } else {
           return this.options[keyOrHash] = value;
         }
-      }
+      },
     };
   });
 
@@ -52,11 +52,11 @@
           enabled: '=',
           steps: '=',
           onFinishCallback: '&onFinishCallback',
-          index: '=?stepIndex'
+          index: '=?stepIndex',
         },
         replace: true,
         link: function(scope, element, attrs) {
-          var attributesToClear, curStep, setupOverlay, setupPositioning;
+          let attributesToClear; let curStep; let setupOverlay; let setupPositioning;
           curStep = null;
           attributesToClear = ['title', 'top', 'right', 'bottom', 'left', 'width', 'height', 'position'];
           scope.stepCount = scope.steps.length;
@@ -74,7 +74,7 @@
             }
           };
           scope.$watch('index', function(newVal, oldVal) {
-            var attr, k, v, _i, _len;
+            let attr; let k; let v; let _i; let _len;
             if (newVal === null) {
               scope.enabled = false;
               setupOverlay(false);
@@ -118,7 +118,7 @@
             }
           };
           setupPositioning = function() {
-            var attachTo, bottom, left, right, top, xMargin, yMargin;
+            let attachTo; let bottom; let left; let right; let top; let xMargin; let yMargin;
             attachTo = curStep['attachTo'];
             scope.position = curStep['position'];
             xMargin = 15;
@@ -168,7 +168,7 @@
               }
             }
             if (scope.position && scope.position.length) {
-              return scope.positionClass = "onboarding-" + scope.position;
+              return scope.positionClass = 'onboarding-' + scope.position;
             } else {
               return scope.positionClass = null;
             }
@@ -177,9 +177,8 @@
             return scope.index = 0;
           }
         },
-        template: "<div class='onboarding-container' ng-show='enabled'>\n  <div class='{{overlayClass}}' ng-style='{opacity: overlayOpacity}', ng-show='overlay'></div>\n  <div class='{{popoverClass}} {{positionClass}}' ng-style=\"{width: width, height: height, left: left, top: top, right: right, bottom: bottom}\">\n    <div class='{{arrowClass}}'></div>\n    <h3 class='{{titleClass}}' ng-show='title' ng-bind='title'></h3>\n    <a href='' ng-click='close()' class='{{closeButtonClass}}' ng-bind-html='closeButtonText'></a>\n    <div class='{{contentClass}}'>\n      <p ng-bind-html='description'></p>\n    </div>\n    <div class='{{buttonContainerClass}}' ng-show='showButtons'>\n      <span ng-show='showStepInfo' class='{{stepClass}}'>{{index + 1}}/{{stepCount}}</span>\n      <a href='' ng-click='previous()' ng-show='showPreviousButton' class='{{buttonClass}}' ng-bind-html='previousButtonText'></a>\n      <a href='' ng-click='next()' ng-show='showNextButton' class='{{buttonClass}}' ng-bind-html='nextButtonText'></a>\n      <a href='' ng-click='close()' ng-show='showDoneButton && lastStep' class='{{buttonClass}}' ng-bind-html='doneButtonText'></a>\n    </div>\n  </div>\n</div>"
+        template: '<div class=\'onboarding-container\' ng-show=\'enabled\'>\n  <div class=\'{{overlayClass}}\' ng-style=\'{opacity: overlayOpacity}\', ng-show=\'overlay\'></div>\n  <div class=\'{{popoverClass}} {{positionClass}}\' ng-style="{width: width, height: height, left: left, top: top, right: right, bottom: bottom}">\n    <div class=\'{{arrowClass}}\'></div>\n    <h3 class=\'{{titleClass}}\' ng-show=\'title\' ng-bind=\'title\'></h3>\n    <a href=\'\' ng-click=\'close()\' class=\'{{closeButtonClass}}\' ng-bind-html=\'closeButtonText\'></a>\n    <div class=\'{{contentClass}}\'>\n      <p ng-bind-html=\'description\'></p>\n    </div>\n    <div class=\'{{buttonContainerClass}}\' ng-show=\'showButtons\'>\n      <span ng-show=\'showStepInfo\' class=\'{{stepClass}}\'>{{index + 1}}/{{stepCount}}</span>\n      <a href=\'\' ng-click=\'previous()\' ng-show=\'showPreviousButton\' class=\'{{buttonClass}}\' ng-bind-html=\'previousButtonText\'></a>\n      <a href=\'\' ng-click=\'next()\' ng-show=\'showNextButton\' class=\'{{buttonClass}}\' ng-bind-html=\'nextButtonText\'></a>\n      <a href=\'\' ng-click=\'close()\' ng-show=\'showDoneButton && lastStep\' class=\'{{buttonClass}}\' ng-bind-html=\'doneButtonText\'></a>\n    </div>\n  </div>\n</div>',
       };
-    }
+    },
   ]);
-
 }).call(this);

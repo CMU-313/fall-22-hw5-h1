@@ -12,15 +12,15 @@ angular.module('docs').controller('SettingsSession', function($scope, Restangula
       $scope.sessions = data.sessions;
     });
   };
-  
+
   /**
    * Clear all active sessions.
    */
   $scope.deleteSession = function() {
     Restangular.one('user/session').remove().then(function() {
       $scope.loadSession();
-    })
+    });
   };
-  
+
   $scope.loadSession();
 });

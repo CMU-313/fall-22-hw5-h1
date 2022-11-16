@@ -14,7 +14,7 @@ angular.module('docs').controller('Footer', function($scope, $rootScope, Restang
     $scope.currentLang = $translate.use();
     timeAgoSettings.overrideLang = $scope.currentLang;
     localStorage.overrideLang = $scope.currentLang;
-    tmhDynamicLocale.set($scope.currentLang).then(function () {
+    tmhDynamicLocale.set($scope.currentLang).then(function() {
       $rootScope.dateFormat = $locale.DATETIME_FORMATS.shortDate;
       $rootScope.dateTimeFormat = $locale.DATETIME_FORMATS.short;
     });

@@ -12,13 +12,13 @@ angular.module('docs').controller('SettingsGroup', function($scope, $state, Rest
       $scope.groups = data.groups;
     });
   };
-  
+
   $scope.loadGroups();
-  
+
   /**
    * Edit a group.
    */
   $scope.editGroup = function(group) {
-    $state.go('settings.group.edit', { name: group.name });
+    $state.go('settings.group.edit', {name: group.name});
   };
 });

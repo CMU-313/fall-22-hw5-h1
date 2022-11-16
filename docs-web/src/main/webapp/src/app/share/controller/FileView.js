@@ -4,11 +4,11 @@
  * File view controller.
  */
 angular.module('share').controller('FileView', function($uibModal, $state, $stateParams, $timeout) {
-  var modal = $uibModal.open({
+  const modal = $uibModal.open({
     windowClass: 'modal modal-fileview',
     templateUrl: 'partial/share/file.view.html',
     controller: 'FileModalView',
-    size: 'lg'
+    size: 'lg',
   });
 
   // Returns to share view on file close
@@ -17,11 +17,11 @@ angular.module('share').controller('FileView', function($uibModal, $state, $stat
     modal.closed = true;
   }, function() {
     modal.closed = true;
-    $timeout(function () {
+    $timeout(function() {
       // After all router transitions are passed,
       // if we are still on the file route, go back to the share
       if ($state.current.name === 'share.file') {
-        $state.go('share', { documentId: $stateParams.documentId, shareId: $stateParams.shareId });
+        $state.go('share', {documentId: $stateParams.documentId, shareId: $stateParams.shareId});
       }
     });
   });
