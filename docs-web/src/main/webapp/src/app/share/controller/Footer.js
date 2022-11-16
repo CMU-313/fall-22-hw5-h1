@@ -13,7 +13,7 @@ angular.module('share').controller('Footer', function($scope, $rootScope, Restan
   $rootScope.$on('$translateChangeSuccess', function() {
     $scope.currentLang = $translate.use();
     localStorage.overrideLang = $scope.currentLang;
-    tmhDynamicLocale.set($scope.currentLang).then(function () {
+    tmhDynamicLocale.set($scope.currentLang).then(function() {
       $rootScope.dateFormat = $locale.DATETIME_FORMATS.shortDate;
       $rootScope.dateTimeFormat = $locale.DATETIME_FORMATS.short;
     });

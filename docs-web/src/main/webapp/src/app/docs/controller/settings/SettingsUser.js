@@ -10,18 +10,18 @@ angular.module('docs').controller('SettingsUser', function($scope, $state, Resta
   $scope.loadUsers = function() {
     Restangular.one('user/list').get({
       sort_column: 1,
-      asc: true
+      asc: true,
     }).then(function(data) {
       $scope.users = data.users;
     });
   };
-  
+
   $scope.loadUsers();
-  
+
   /**
    * Edit a user.
    */
   $scope.editUser = function(user) {
-    $state.go('settings.user.edit', { username: user.username });
+    $state.go('settings.user.edit', {username: user.username});
   };
 });

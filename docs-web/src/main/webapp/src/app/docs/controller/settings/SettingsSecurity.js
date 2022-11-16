@@ -11,12 +11,12 @@ angular.module('docs').controller('SettingsSecurity', function($scope, User, $di
   /**
    * Enable TOTP.
    */
-  $scope.enableTotp = function () {
-    var title = $translate.instant('settings.security.enable_totp');
-    var msg = $translate.instant('settings.security.enable_totp_message');
-    var btns = [
-      { result:'cancel', label: $translate.instant('cancel') },
-      { result:'ok', label: $translate.instant('ok'), cssClass: 'btn-primary' }
+  $scope.enableTotp = function() {
+    const title = $translate.instant('settings.security.enable_totp');
+    const msg = $translate.instant('settings.security.enable_totp_message');
+    const btns = [
+      {result: 'cancel', label: $translate.instant('cancel')},
+      {result: 'ok', label: $translate.instant('ok'), cssClass: 'btn-primary'},
     ];
 
     $dialog.messageBox(title, msg, btns, function(result) {
@@ -25,7 +25,7 @@ angular.module('docs').controller('SettingsSecurity', function($scope, User, $di
           $scope.secret = data.secret;
           User.userInfo(true).then(function(data) {
             $scope.user = data;
-          })
+          });
         });
       }
     });
@@ -34,22 +34,22 @@ angular.module('docs').controller('SettingsSecurity', function($scope, User, $di
   /**
    * Disable TOTP.
    */
-  $scope.disableTotp = function () {
+  $scope.disableTotp = function() {
     $uibModal.open({
       templateUrl: 'partial/docs/settings.security.disabletotp.html',
-      controller: 'SettingsSecurityModalDisableTotp'
-    }).result.then(function (password) {
+      controller: 'SettingsSecurityModalDisableTotp',
+    }).result.then(function(password) {
       if (password === null) {
         return;
       }
 
       // Disable TOTP
       Restangular.one('user/disable_totp').post('', {
-        password: password
+        password: password,
       }).then(function() {
         User.userInfo(true).then(function(data) {
           $scope.user = data;
-        })
+        });
       });
     });
   };
@@ -58,12 +58,12 @@ angular.module('docs').controller('SettingsSecurity', function($scope, User, $di
    * Test TOTP.
    */
   $scope.testValidationCodeSuccess = null;
-  $scope.testTotp = function (code) {
+  $scope.testTotp = function(code) {
     Restangular.one('user/test_totp').post('', {
-      code: code
+      code: code,
     }).then(function() {
       $scope.testValidationCodeSuccess = true;
-    }, function () {
+    }, function() {
       $scope.testValidationCodeSuccess = false;
     });
   };

@@ -12,7 +12,7 @@ angular.module('docs').directive('aclEdit', function() {
       source: '=',
       acls: '=',
       writable: '=',
-      creator: '='
+      creator: '=',
     },
     controller: function($scope, Restangular, $q) {
       // Watch for ACLs change and group them for easy displaying
@@ -21,15 +21,15 @@ angular.module('docs').directive('aclEdit', function() {
           return acl.id;
         });
       });
-      
+
       // Initialize add ACL
-      $scope.acl = { perm: 'READ' };
+      $scope.acl = {perm: 'READ'};
 
       /**
        * Delete an ACL.
        */
       $scope.deleteAcl = function(acl) {
-        Restangular.one('acl/' + $scope.source + '/' + acl.perm + '/' + acl.id, null).remove().then(function () {
+        Restangular.one('acl/' + $scope.source + '/' + acl.perm + '/' + acl.id, null).remove().then(function() {
           $scope.acls = _.reject($scope.acls, function(s) {
             return angular.equals(acl, s);
           });
@@ -42,25 +42,25 @@ angular.module('docs').directive('aclEdit', function() {
       $scope.addAcl = function() {
         // Compute ACLs to add
         $scope.acl.source = $scope.source;
-        var acls = [];
+        let acls = [];
         if ($scope.acl.perm === 'READWRITE') {
           acls = [{
             source: $scope.source,
             target: $scope.acl.target.name,
             perm: 'READ',
-            type: $scope.acl.target.type
+            type: $scope.acl.target.type,
           }, {
             source: $scope.source,
             target: $scope.acl.target.name,
             perm: 'WRITE',
-            type: $scope.acl.target.type
+            type: $scope.acl.target.type,
           }];
         } else {
           acls = [{
             source: $scope.source,
             target: $scope.acl.target.name,
             perm: $scope.acl.perm,
-            type: $scope.acl.target.type
+            type: $scope.acl.target.type,
           }];
         }
 
@@ -76,37 +76,37 @@ angular.module('docs').directive('aclEdit', function() {
         });
 
         // Reset form
-        $scope.acl = { perm: 'READ' };
+        $scope.acl = {perm: 'READ'};
       };
 
       /**
        * Auto-complete on ACL target.
        */
       $scope.getTargetAclTypeahead = function($viewValue) {
-        var deferred = $q.defer();
+        const deferred = $q.defer();
         Restangular.one('acl/target/search')
-          .get({
-            search: $viewValue
-          }).then(function(data) {
-          var output = [];
+            .get({
+              search: $viewValue,
+            }).then(function(data) {
+              const output = [];
 
-          // Add the type to use later
-          output.push.apply(output,  _.map(data.users, function(user) {
-            user.type = 'USER';
-            return user;
-          }));
-          output.push.apply(output, _.map(data.groups, function(group) {
-            group.type = 'GROUP';
-            return group;
-          }));
+              // Add the type to use later
+              output.push.apply(output, _.map(data.users, function(user) {
+                user.type = 'USER';
+                return user;
+              }));
+              output.push.apply(output, _.map(data.groups, function(group) {
+                group.type = 'GROUP';
+                return group;
+              }));
 
-          // Send the data to the typeahead directive
-          deferred.resolve(output, true);
-        });
+              // Send the data to the typeahead directive
+              deferred.resolve(output, true);
+            });
         return deferred.promise;
       };
     },
     link: function(scope, element, attr, ctrl) {
-    }
-  }
+    },
+  };
 });

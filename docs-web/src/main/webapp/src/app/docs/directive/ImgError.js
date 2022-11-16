@@ -11,6 +11,6 @@ angular.module('docs').directive('imgError', function() {
         // call the function that was passed
         scope.$apply(attrs.imgError);
       });
-    }
+    },
   };
-})
+});

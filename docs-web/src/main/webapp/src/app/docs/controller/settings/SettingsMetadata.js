@@ -7,7 +7,7 @@ angular.module('docs').controller('SettingsMetadata', function($scope, Restangul
   // Load metadata
   Restangular.one('metadata').get({
     sort_column: 1,
-    asc: true
+    asc: true,
   }).then(function(data) {
     $scope.metadata = data.metadata;
   });

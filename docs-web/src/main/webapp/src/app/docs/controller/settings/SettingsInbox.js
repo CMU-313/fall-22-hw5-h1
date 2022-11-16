@@ -5,7 +5,7 @@
  */
 angular.module('docs').controller('SettingsInbox', function($scope, $rootScope, Restangular, $translate, $timeout) {
   // Get the inbox configuration
-  Restangular.one('app/config_inbox').get().then(function (data) {
+  Restangular.one('app/config_inbox').get().then(function(data) {
     $scope.inbox = data;
   });
 
@@ -16,8 +16,8 @@ angular.module('docs').controller('SettingsInbox', function($scope, $rootScope, 
 
   // Save the inbox configuration
   $scope.saveResult = undefined;
-  $scope.editInboxConfig = function () {
-    return Restangular.one('app').post('config_inbox', $scope.inbox).then(function () {
+  $scope.editInboxConfig = function() {
+    return Restangular.one('app').post('config_inbox', $scope.inbox).then(function() {
       $scope.saveResult = $translate.instant('settings.inbox.saved');
       $timeout(function() {
         $scope.saveResult = undefined;
@@ -25,11 +25,11 @@ angular.module('docs').controller('SettingsInbox', function($scope, $rootScope, 
     });
   };
 
-  $scope.testInboxConfig = function () {
+  $scope.testInboxConfig = function() {
     $scope.testLoading = true;
     $scope.testResult = undefined;
-    $scope.editInboxConfig().then(function () {
-      Restangular.one('app').post('test_inbox').then(function (data) {
+    $scope.editInboxConfig().then(function() {
+      Restangular.one('app').post('test_inbox').then(function(data) {
         $scope.testResult = data;
         $scope.testLoading = false;
         $timeout(function() {

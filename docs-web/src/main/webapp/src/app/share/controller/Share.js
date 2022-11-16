@@ -5,33 +5,33 @@
  */
 angular.module('share').controller('Share', function($scope, $state, $stateParams, Restangular, $uibModal) {
   // Load document
-  Restangular.one('document', $stateParams.documentId).get({ share: $stateParams.shareId })
-      .then(function (data) {
+  Restangular.one('document', $stateParams.documentId).get({share: $stateParams.shareId})
+      .then(function(data) {
         $scope.document = data;
-      }, function (response) {
+      }, function(response) {
         if (response.status === 403) {
           $state.go('403');
         }
       });
 
   // Load files
-  Restangular.one('file/list').get({ id: $stateParams.documentId, share: $stateParams.shareId })
-      .then(function (data) {
+  Restangular.one('file/list').get({id: $stateParams.documentId, share: $stateParams.shareId})
+      .then(function(data) {
         $scope.files = data.files;
       });
 
   // Load comments from server
-  Restangular.one('comment', $stateParams.documentId).get({ share: $stateParams.shareId }).then(function(data) {
-        $scope.comments = data.comments;
-      }, function(response) {
-        $scope.commentsError = response;
-      });
+  Restangular.one('comment', $stateParams.documentId).get({share: $stateParams.shareId}).then(function(data) {
+    $scope.comments = data.comments;
+  }, function(response) {
+    $scope.commentsError = response;
+  });
 
   /**
    * Navigate to the selected file.
    */
-  $scope.openFile = function (file) {
-    $state.go('share.file', { documentId: $stateParams.documentId, shareId: $stateParams.shareId, fileId: file.id })
+  $scope.openFile = function(file) {
+    $state.go('share.file', {documentId: $stateParams.documentId, shareId: $stateParams.shareId, fileId: file.id});
   };
 
   /**
@@ -40,7 +40,7 @@ angular.module('share').controller('Share', function($scope, $state, $stateParam
   $scope.exportPdf = function() {
     $uibModal.open({
       templateUrl: 'partial/share/share.pdf.html',
-      controller: 'ShareModalPdf'
+      controller: 'ShareModalPdf',
     });
 
     return false;

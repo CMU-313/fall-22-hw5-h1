@@ -4,8 +4,8 @@
  * User service.
  */
 angular.module('docs').factory('User', function(Restangular) {
-  var userInfo = null;
-  
+  let userInfo = null;
+
   return {
     /**
      * Returns user info.
@@ -17,19 +17,19 @@ angular.module('docs').factory('User', function(Restangular) {
       }
       return userInfo;
     },
-    
+
     /**
      * Login an user.
      */
     login: function(user) {
       return Restangular.one('user').post('login', user);
     },
-    
+
     /**
      * Logout the current user.
      */
     logout: function() {
       return Restangular.one('user').post('logout', {});
-    }
-  }
+    },
+  };
 });

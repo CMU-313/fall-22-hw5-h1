@@ -11,7 +11,7 @@ angular.module('yaru22.angular-timeago', []);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['ca_ES'] = {
     prefixAgo: 'fa',
     prefixFromNow: 'd\'aquí',
@@ -28,13 +28,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d mesos',
     year: 'prop d\'un any',
     years: '%d anys',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['el'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -51,21 +51,20 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d μήνες',
     year: 'περίπου ένα χρόνο',
     years: '%d χρόνια',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
-
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   /**
    * Czech language uses 2 different versions for future based on the digit being
    * lower than 5 or not.
    */
   function resolvePastAndFuture(past, future, future5) {
     return function(d, millis) {
-      var isFuture = millis < 0;
+      const isFuture = millis < 0;
 
       if (!isFuture) {
         return past;
@@ -85,7 +84,7 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     suffixAgo: null,
     suffixFromNow: null,
 
-    //the below works for past
+    // the below works for past
     seconds: resolvePastAndFuture('méně než minutou', 'méne než minutu', 'méne než minutu'),
     minute: resolvePastAndFuture('minutou', 'minutu', 'minutu'),
     minutes: resolvePastAndFuture('%d minutami', '%d minuty', '%d minút'),
@@ -97,13 +96,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: resolvePastAndFuture('%d měsíci', '%d měsíce', '%d měsíců'),
     year: resolvePastAndFuture('rokem', 'rok', 'rok'),
     years: resolvePastAndFuture('%d lety', '%d roky', '%d let'),
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['da_DK'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -120,13 +119,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d m\xe5neder',
     year: 'omkring et \xe5r',
     years: '%d \xe5r',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['de'] = {
     prefixAgo: 'vor',
     prefixFromNow: 'in',
@@ -143,13 +142,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d Monaten',
     year: 'ca. einem Jahr',
     years: '%d Jahren',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['en_US'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -166,13 +165,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d months',
     year: 'about a year',
     years: '%d years',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['es'] = {
     prefixAgo: 'hace',
     prefixFromNow: 'dentro de',
@@ -189,13 +188,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d meses',
     year: 'un año',
     years: '%d años',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['es_ES'] = {
     prefixAgo: 'hace',
     prefixFromNow: 'dentro de',
@@ -212,13 +211,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d meses',
     year: 'un año',
     years: '%d años',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['es_LA'] = {
     prefixAgo: 'hace',
     prefixFromNow: 'en',
@@ -235,13 +234,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d meses',
     year: 'un año',
     years: '%d años',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['fr'] = {
     prefixAgo: 'il y a',
     prefixFromNow: 'dans',
@@ -258,13 +257,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d mois',
     year: 'environ un an',
     years: '%d ans',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['he_IL'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -281,13 +280,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d חודשים',
     year: 'כשנה',
     years: '%d שנים',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['hu_HU'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -304,13 +303,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d hónapja',
     year: 'körülbelül egy éve',
     years: '%d éve',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['it'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -327,13 +326,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d mesi',
     year: 'circa un anno',
     years: '%d anni',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['nl_NL'] = {
     prefixAgo: null,
     prefixFromNow: 'over',
@@ -350,13 +349,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d maanden',
     year: 'een jaar',
     years: '%d jaar',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['pl_PL'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -373,13 +372,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d miesięcy',
     year: 'około roku',
     years: '%d lat',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['pl'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -396,13 +395,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d miesięcy',
     year: 'około roku',
     years: '%d lat',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['pt_BR'] = {
     prefixAgo: null,
     prefixFromNow: 'daqui a',
@@ -419,13 +418,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d meses',
     year: 'cerca de um ano',
     years: '%d anos',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['ru'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -442,13 +441,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d мес.',
     year: 'около года',
     years: '%d года',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['ru'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -465,13 +464,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d мес.',
     year: 'около года',
     years: '%d г.',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['sv_SE'] = {
     prefixAgo: null,
     prefixFromNow: 'om',
@@ -488,13 +487,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d månader',
     year: 'cirka ett år',
     years: '%d år',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['tr_TR'] = {
     prefixAgo: null,
     prefixFromNow: null,
@@ -511,13 +510,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d ay',
     year: 'bir yıl gibi',
     years: '%d yıl',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['zh_CN'] = {
     wordSeparator: '',
     prefixAgo: null,
@@ -535,13 +534,13 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
     months: '%d个月',
     year: '1年',
     years: '%d年',
-    numbers: []
+    numbers: [],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(timeAgoSettings) {
+angular.module('yaru22.angular-timeago').config(['timeAgoSettings', function(timeAgoSettings) {
   timeAgoSettings.strings['zh_TW'] = {
     wordSeparator: '',
     prefixAgo: null,
@@ -570,14 +569,14 @@ angular.module('yaru22.angular-timeago').config(["timeAgoSettings", function(tim
       '七十一', '七十二', '七十三', '七十四', '七十五', '七十六', '七十七', '七十八', '七十九', '八十',
       '八十一', '八十二', '八十三', '八十四', '八十五', '八十六', '八十七', '八十八', '八十九', '九十',
       '九十一', '九十二', '九十三', '九十四', '九十五', '九十六', '九十七', '九十八', '九十九', '一百',
-    ]
+    ],
   };
 }]);
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').factory('nowTime', ["$interval", "timeAgo", "timeAgoSettings", function($interval, timeAgo, timeAgoSettings) {
-  var nowTime;
+angular.module('yaru22.angular-timeago').factory('nowTime', ['$interval', 'timeAgo', 'timeAgoSettings', function($interval, timeAgo, timeAgoSettings) {
+  let nowTime;
 
   function updateTime() {
     nowTime = Date.now();
@@ -608,21 +607,21 @@ angular.module('yaru22.angular-timeago').constant('timeAgoSettings', {
     daysToMonth: 30, // in days
     daysToMonths: 45, // in days
     daysToYear: 365, // in days
-    yearToYears: 1.5 // in year
-  }
+    yearToYears: 1.5, // in year
+  },
 });
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').directive('timeAgo', ["timeAgo", "nowTime", function(timeAgo, nowTime) {
+angular.module('yaru22.angular-timeago').directive('timeAgo', ['timeAgo', 'nowTime', function(timeAgo, nowTime) {
   return {
     scope: {
       fromTime: '@',
-      format: '@'
+      format: '@',
     },
     restrict: 'EA',
     link: function(scope, elem) {
-      var fromTime;
+      let fromTime;
 
       // Track changes to fromTime
       scope.$watch('fromTime', function() {
@@ -635,22 +634,21 @@ angular.module('yaru22.angular-timeago').directive('timeAgo', ["timeAgo", "nowTi
       }, function(value) {
         angular.element(elem).text(timeAgo.inWords(value, fromTime, scope.format));
       });
-    }
+    },
   };
 }]);
 
 'use strict';
-/*global moment */
+/* global moment */
 
-angular.module('yaru22.angular-timeago').factory('timeAgo', ["$filter", "timeAgoSettings", function($filter, timeAgoSettings) {
-  var service = {};
+angular.module('yaru22.angular-timeago').factory('timeAgo', ['$filter', 'timeAgoSettings', function($filter, timeAgoSettings) {
+  const service = {};
 
   service.inWords = function(distanceMillis, fromTime, format, timezone) {
-
-    var fullDateAfterSeconds = parseInt(timeAgoSettings.fullDateAfterSeconds, 10);
+    const fullDateAfterSeconds = parseInt(timeAgoSettings.fullDateAfterSeconds, 10);
 
     if (!isNaN(fullDateAfterSeconds)) {
-      var fullDateAfterMillis = fullDateAfterSeconds * 1000;
+      const fullDateAfterMillis = fullDateAfterSeconds * 1000;
       if ((distanceMillis >= 0 && fullDateAfterMillis <= distanceMillis) ||
         (distanceMillis < 0 && fullDateAfterMillis >= distanceMillis)) {
         if (format) {
@@ -660,10 +658,10 @@ angular.module('yaru22.angular-timeago').factory('timeAgo', ["$filter", "timeAgo
       }
     }
 
-    var overrideLang = timeAgoSettings.overrideLang;
-    var documentLang = document.documentElement.lang;
-    var sstrings = timeAgoSettings.strings;
-    var lang, $l;
+    const overrideLang = timeAgoSettings.overrideLang;
+    const documentLang = document.documentElement.lang;
+    const sstrings = timeAgoSettings.strings;
+    let lang; let $l;
 
     if (typeof sstrings[overrideLang] !== 'undefined') {
       lang = overrideLang;
@@ -676,8 +674,8 @@ angular.module('yaru22.angular-timeago').factory('timeAgo', ["$filter", "timeAgo
       $l = sstrings[lang];
     }
 
-    var prefix = $l.prefixAgo;
-    var suffix = $l.suffixAgo;
+    let prefix = $l.prefixAgo;
+    let suffix = $l.suffixAgo;
     if (timeAgoSettings.allowFuture) {
       if (distanceMillis < 0) {
         prefix = $l.prefixFromNow;
@@ -685,22 +683,22 @@ angular.module('yaru22.angular-timeago').factory('timeAgo', ["$filter", "timeAgo
       }
     }
 
-    var seconds = Math.abs(distanceMillis) / 1000;
-    var minutes = seconds / 60;
-    var hours = minutes / 60;
-    var days = hours / 24;
-    var years = days / 365;
+    const seconds = Math.abs(distanceMillis) / 1000;
+    const minutes = seconds / 60;
+    const hours = minutes / 60;
+    const days = hours / 24;
+    const years = days / 365;
 
     function substitute(stringOrFunction, number) {
       number = Math.round(number);
-      var string = angular.isFunction(stringOrFunction) ?
+      const string = angular.isFunction(stringOrFunction) ?
         stringOrFunction(number, distanceMillis) : stringOrFunction;
-      var value = ($l.numbers && $l.numbers[number]) || number;
+      const value = ($l.numbers && $l.numbers[number]) || number;
       return string.replace(/%d/i, value);
     }
 
-    var breakpoints = timeAgoSettings.breakpoints;
-    var words = seconds < breakpoints.secondsToMinute && substitute($l.seconds, seconds) ||
+    const breakpoints = timeAgoSettings.breakpoints;
+    const words = seconds < breakpoints.secondsToMinute && substitute($l.seconds, seconds) ||
       seconds < breakpoints.secondsToMinutes && substitute($l.minute, 1) ||
       minutes < breakpoints.minutesToHour && substitute($l.minutes, minutes) ||
       minutes < breakpoints.minutesToHours && substitute($l.hour, 1) ||
@@ -712,7 +710,7 @@ angular.module('yaru22.angular-timeago').factory('timeAgo', ["$filter", "timeAgo
       years < breakpoints.yearToYears && substitute($l.year, 1) ||
       substitute($l.years, years);
 
-    var separator = $l.wordSeparator === undefined ? ' ' : $l.wordSeparator;
+    const separator = $l.wordSeparator === undefined ? ' ' : $l.wordSeparator;
     if (lang === 'he_IL') {
       return [prefix, suffix, words].join(separator).trim();
     } else {
@@ -730,7 +728,7 @@ angular.module('yaru22.angular-timeago').factory('timeAgo', ["$filter", "timeAgo
     } else if (/^\d+$/.test(input)) {
       return new Date(parseInt(input, 10));
     } else {
-      var s = (input || '').trim();
+      let s = (input || '').trim();
       s = s.replace(/\.\d+/, ''); // remove milliseconds
       s = s.replace(/-/, '/').replace(/-/, '/');
       s = s.replace(/T/, ' ').replace(/Z/, ' UTC');
@@ -744,10 +742,10 @@ angular.module('yaru22.angular-timeago').factory('timeAgo', ["$filter", "timeAgo
 
 'use strict';
 
-angular.module('yaru22.angular-timeago').filter('timeAgo', ["nowTime", "timeAgo", function(nowTime, timeAgo) {
+angular.module('yaru22.angular-timeago').filter('timeAgo', ['nowTime', 'timeAgo', function(nowTime, timeAgo) {
   function timeAgoFilter(value, format, timezone) {
-    var fromTime = timeAgo.parse(value);
-    var diff = nowTime() - fromTime;
+    const fromTime = timeAgo.parse(value);
+    const diff = nowTime() - fromTime;
     return timeAgo.inWords(diff, fromTime, format, timezone);
   }
   timeAgoFilter.$stateful = true;
