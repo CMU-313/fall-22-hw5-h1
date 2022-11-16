@@ -1,0 +1,24 @@
+{
+  "name": "@eslint/config",
+  "version": "0.4.1",
+  "description": "<h3 align=\"center\">   <img src=\"https://teedy.io/img/github-title.png\" alt=\"Teedy\" width=500 /> </h3>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMU-313/fall-22-hw5-h1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CMU-313/fall-22-hw5-h1/issues"
+  },
+  "homepage": "https://github.com/CMU-313/fall-22-hw5-h1#readme",
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.31.10"
+  }
+}

@@ -59,6 +59,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: badges
           force: true
+    
+      - name: Run ESLint
+        uses: stefanoeb/eslint-action@1.0.2
+
 
 
 
